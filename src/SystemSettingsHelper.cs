@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Windows;
 using OpenQA.Selenium.Remote;
 
@@ -59,27 +60,79 @@ namespace WindowsTestHelpers
 
             var settingsWindow = desktopSession.FindElementByName("Settings");
 
-            var dropDown = settingsWindow.FindElementByAccessibilityId("SystemSettings_Accessibility_HighContrast_HCThemesComboBox");
+            WindowsElement themeSelector;
 
-            if (dropDown.Text != highContrastMode)
+            // 1803 introduced changes to the structure of the settings screen.
+            // See if settings page has the new way of enabling HighContrast
+            if (settingsWindow.TryFindElementByName("High-contrast theme", out themeSelector))
             {
-                dropDown.Click();
+                settingsWindow.TryFindElementByName("Turn on high contrast", out var toggle);
 
-                var listItems = settingsWindow.FindElementsByClassName("ComboBoxItem");
-
-                foreach (var item in listItems)
+                if (highContrastMode == "None")
                 {
-                    if (item.Text == highContrastMode)
+                    if (themeSelector.Enabled)
                     {
-                        item.Click();
-                        break;
+                        toggle.Click();
+
+                        // Allow changes to be applied
+                        await Task.Delay(15000);
                     }
                 }
+                else
+                {
+                    if (!themeSelector.Enabled)
+                    {
+                        toggle.Click();
+                        await Task.Delay(5000);
+                    }
 
-                settingsWindow.FindElementByName("Apply").Click();
+                    themeSelector.Click();
+                    await Task.Delay(1000);
 
-                // TODO: Need to find a better solution than pausing this long
-                await Task.Delay(30000);
+                    var listItems = settingsWindow.FindElementsByClassName("ComboBoxItem");
+
+                    foreach (var item in listItems)
+                    {
+                        if (item.Text == highContrastMode)
+                        {
+                            item.Click();
+                            break;
+                        }
+                    }
+
+                    settingsWindow.FindElementByName("Apply").Click();
+
+                    // Allow changes to be applied
+                    await Task.Delay(15000);
+                }
+            }
+            else
+            {
+                // Rely on old settings dialog.
+                var dropDown =
+                    settingsWindow.FindElementByAccessibilityId(
+                        "SystemSettings_Accessibility_HighContrast_HCThemesComboBox");
+
+                if (dropDown.Text != highContrastMode)
+                {
+                    dropDown.Click();
+
+                    var listItems = settingsWindow.FindElementsByClassName("ComboBoxItem");
+
+                    foreach (var item in listItems)
+                    {
+                        if (item.Text == highContrastMode)
+                        {
+                            item.Click();
+                            break;
+                        }
+                    }
+
+                    settingsWindow.FindElementByName("Apply").Click();
+
+                    // TODO: Need to find a better solution than pausing this long
+                    await Task.Delay(30000);
+                }
             }
 
             settingsWindow.FindElementByName("Close Settings").Click();

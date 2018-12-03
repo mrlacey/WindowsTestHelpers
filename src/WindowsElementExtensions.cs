@@ -31,6 +31,39 @@ namespace WindowsTestHelpers
             }
         }
 
+        public static bool TryFindElementByName(this WindowsElement source, string name, out WindowsElement element)
+        {
+            try
+            {
+                // FindElementByName will throw if it can't find something matching the name
+                element = (WindowsElement)source.FindElementByName(name);
+
+                return true;
+            }
+            catch
+            {
+                element = null;
+                return false;
+            }
+        }
+
+        public static bool TryFindElementByWindowsUIAutomation(this WindowsElement session, string selector, out WindowsElement element)
+        {
+            try
+            {
+                // Will throw if it can't find something matching the selector
+                element = (WindowsElement)session.FindElementByWindowsUIAutomation(selector);
+
+                return true;
+            }
+            catch
+            {
+                element = null;
+                return false;
+            }
+        }
+
+
         public static WindowsElement FindElementByNameIfExists(this WindowsDriver<WindowsElement> session, string name)
         {
             WindowsElement element = null;
