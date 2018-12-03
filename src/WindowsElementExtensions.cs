@@ -1,0 +1,91 @@
+﻿// <copyright file="WindowsElementExtensions.cs" company="Matt Lacey">
+// Copyright © Matt Lacey. All Rights Reserved.
+// Licensed under the MIT License. See LICENSE in the solution root for license information.
+// </copyright>
+
+using System;
+using System.Collections.Generic;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Text;
+
+using OpenQA.Selenium.Appium.Windows;
+
+namespace WindowsTestHelpers
+{
+    public static class WindowsElementExtensions
+    {
+        public static bool TryFindElementByName(this WindowsDriver<WindowsElement> session, string name, out WindowsElement element)
+        {
+            try
+            {
+                // FindElementByName will throw if it can't find something matching the name
+                element = session.FindElementByName(name);
+
+                return true;
+            }
+            catch
+            {
+                element = null;
+                return false;
+            }
+        }
+
+        public static WindowsElement FindElementByNameIfExists(this WindowsDriver<WindowsElement> session, string name)
+        {
+            WindowsElement element = null;
+
+            try
+            {
+                element = session.FindElementByName(name);
+            }
+            catch (Exception exc)
+            {
+                System.Diagnostics.Debug.WriteLine(exc);
+            }
+
+            return element;
+        }
+
+        public static void ClickElement(this WindowsDriver<WindowsElement> session, string name)
+        {
+            session.FindElementByName(name).Click();
+        }
+
+        public static void SaveScreenshot(this WindowsDriver<WindowsElement> session, string fileName)
+        {
+            if (string.IsNullOrWhiteSpace(fileName))
+            {
+                throw new ArgumentException(nameof(fileName));
+            }
+
+            ImageFormat imgFormat;
+
+            switch (Path.GetExtension(fileName).ToLowerInvariant())
+            {
+                case ".bmp":
+                    imgFormat = ImageFormat.Bmp;
+                    break;
+                case ".gif":
+                    imgFormat = ImageFormat.Gif;
+                    break;
+                case ".jpg":
+                case ".jpeg":
+                    imgFormat = ImageFormat.Jpeg;
+                    break;
+                case ".png":
+                    imgFormat = ImageFormat.Png;
+                    break;
+                case ".tif":
+                case ".tiff":
+                    imgFormat = ImageFormat.Tiff;
+                    break;
+                default:
+                    throw new ArgumentException("Unsupported file extension.", nameof(fileName));
+            }
+
+            var screenshot = session.GetScreenshot();
+            screenshot.SaveAsFile(fileName, imgFormat);
+        }
+    }
+}
