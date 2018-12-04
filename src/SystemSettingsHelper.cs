@@ -83,11 +83,11 @@ namespace WindowsTestHelpers
                     if (!themeSelector.Enabled)
                     {
                         toggle.Click();
-                        await Task.Delay(5000);
+                        await Task.Delay(5000); // Allow for settings UI to update after enabling HC
                     }
 
                     themeSelector.Click();
-                    await Task.Delay(1000);
+                    await Task.Delay(1000); // Allow for UI to update & list to load
 
                     var listItems = settingsWindow.FindElementsByClassName("ComboBoxItem");
 
