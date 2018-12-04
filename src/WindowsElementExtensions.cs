@@ -63,7 +63,6 @@ namespace WindowsTestHelpers
             }
         }
 
-
         public static WindowsElement FindElementByNameIfExists(this WindowsDriver<WindowsElement> session, string name)
         {
             WindowsElement element = null;
