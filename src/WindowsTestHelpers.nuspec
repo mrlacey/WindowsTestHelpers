@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>WindowsTestHelpers</id>
-    <version>0.1.10</version>
+    <version>0.1.15</version>
     <authors>Matt Lacey</authors>
     <projectUrl>https://github.com/mrlacey/WindowsTestHelpers</projectUrl>
     <description>A collection of utility classes to help with testing Windows Apps.</description>
@@ -10,16 +10,17 @@
     <tags>Windows test testing UWP WinAppDriver</tags>
   
     <dependencies>
-      <dependency id="Appium.WebDriver" version="3.0.0.2" />
-      <dependency id="Microsoft.Azure.CognitiveServices.Vision.ComputerVision" version="3.2.0" />
-      <dependency id="MSTest.TestAdapter" version="1.3.2" />
-      <dependency id="MSTest.TestFramework" version="1.3.2" />
-      <dependency id="Newtonsoft.Json" version="9.0.1" />
-      <dependency id="System.Management.Automation.dll" version="10.0.10586" />
-      <dependency id="System.ValueTuple" version="4.5.0" />
+      <group targetFramework="net47">
+        <dependency id="Appium.WebDriver" version="3.0.0.2" />
+        <dependency id="Microsoft.Azure.CognitiveServices.Vision.ComputerVision" version="3.2.0" />
+        <dependency id="MSTest.TestAdapter" version="1.4.0"/>
+        <dependency id="MSTest.TestFramework" version="1.4.0" />
+        <dependency id="Newtonsoft.Json" version="9.0.1" />
+        <dependency id="System.Management.Automation.dll" version="10.0.10586" />
+      </group>
     </dependencies>  
   </metadata>
   <files>
-    <file src="bin\Release\net452\*.dll" target="lib\net452\"/>
+    <file src="bin\Release\net47\WindowsTestHelpers.dll" target="lib\net47\"/>
   </files>
 </package>
