@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>WindowsTestHelpers</id>
-    <version>0.1.16</version>
+    <version>0.1.17</version>
     <authors>Matt Lacey</authors>
     <projectUrl>https://github.com/mrlacey/WindowsTestHelpers</projectUrl>
     <description>A collection of utility classes to help with testing Windows Apps.</description>

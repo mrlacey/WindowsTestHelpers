@@ -80,10 +80,19 @@ if ($wad -ne $null)
             return new WindowsDriver<WindowsElement>(new Uri(winAppDriverUrl), appCapabilities);
         }
 
-        public static WindowsDriver<WindowsElement> LaunchAppx(string installedAppxProductFamilyName, string winAppDriverUrl = "http://127.0.0.1:4723")
+        public static WindowsDriver<WindowsElement> LaunchAppx(string installedAppxPackageFamilyName, string winAppDriverUrl = "http://127.0.0.1:4723")
         {
+            var app = installedAppxPackageFamilyName;
+
+            // To launch app we need the path to the app object.
+            // Tis is normally the PFN followed by "!App" but may be different due to a differently configured launch object
+            if (!app.Contains("!"))
+            {
+                app += "!App";
+            }
+
             DesiredCapabilities appCapabilities = new DesiredCapabilities();
-            appCapabilities.SetCapability("app", installedAppxProductFamilyName);
+            appCapabilities.SetCapability("app", app);
             appCapabilities.SetCapability("deviceName", "WindowsPC");
 
             var appSession = new WindowsDriver<WindowsElement>(new Uri(winAppDriverUrl), appCapabilities);
