@@ -50,7 +50,7 @@ if ($wad -ne $null)
             PowerShellHelper.ExecuteScript(script);
         }
 
-        public static WindowsDriver<WindowsElement> LaunchExe(string exeFilePath, string appArguments = "", string appWorkingDir = "")
+        public static WindowsDriver<WindowsElement> LaunchExe(string exeFilePath, string appArguments = "", string appWorkingDir = "", string winAppDriverUrl = "http://127.0.0.1:4723")
         {
             if (string.IsNullOrWhiteSpace(exeFilePath))
             {
@@ -77,7 +77,19 @@ if ($wad -ne $null)
 
             appCapabilities.SetCapability("appWorkingDir", appWorkingDir);
 
-            return new WindowsDriver<WindowsElement>(new Uri("http://127.0.0.1:4723"), appCapabilities);
+            return new WindowsDriver<WindowsElement>(new Uri(winAppDriverUrl), appCapabilities);
+        }
+
+        public static WindowsDriver<WindowsElement> LaunchAppx(string installedAppxProductFamilyName, string winAppDriverUrl = "http://127.0.0.1:4723")
+        {
+            DesiredCapabilities appCapabilities = new DesiredCapabilities();
+            appCapabilities.SetCapability("app", installedAppxProductFamilyName);
+            appCapabilities.SetCapability("deviceName", "WindowsPC");
+
+            var appSession = new WindowsDriver<WindowsElement>(new Uri(winAppDriverUrl), appCapabilities);
+            appSession.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(4));
+
+            return appSession;
         }
     }
 }
