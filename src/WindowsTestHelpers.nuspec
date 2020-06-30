@@ -4,9 +4,10 @@
     <id>WindowsTestHelpers</id>
     <version>0.3.0</version>
     <authors>Matt Lacey</authors>
+    <owners>MRLacey</owners>
     <projectUrl>https://github.com/mrlacey/WindowsTestHelpers</projectUrl>
     <description>A collection of utility classes to help with testing Windows Apps.</description>
-    <licenseUrl>https://github.com/mrlacey/WindowsTestHelpers/blob/master/LICENSE</licenseUrl>
+    <license type="expression">MIT</license>
     <tags>Windows test testing UWP WinAppDriver</tags>
 
     <dependencies>
