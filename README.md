@@ -14,6 +14,10 @@ The following functionality is included
 
 - `MoveToTopLeftOfScreen()`
 
+## ExceptionHelper
+
+- `RetryOn<TException>()`
+
 ## ExecutionEnvironment
 
 - `CheckRunningAsAdmin()`
