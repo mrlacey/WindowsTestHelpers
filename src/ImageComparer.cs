@@ -40,6 +40,9 @@ namespace WindowsTestHelpers
         // Factor for smaller image conversion
         public static int DivFactor { get; set; } = 10;
 
+        /// <summary>
+        /// Calculates the percentage differrence between the pixels of two images.
+        /// </summary>
         public static float PercentageDifferent(Image img1, Image img2, params ExclusionArea[] exclusionAreas)
         {
             var differences = img1.GetDifferences(img2, exclusionAreas);
@@ -48,6 +51,9 @@ namespace WindowsTestHelpers
             return diffPixels / 256f;
         }
 
+        /// <summary>
+        /// Generates a version of the first image highlighting where differences exist between it and the second.
+        /// </summary>
         public static Image GetDifferenceImage(this Image img1, Image img2, params ExclusionArea[] exclusionAreas)
         {
             var differences = img1.GetDifferences(img2, exclusionAreas);
@@ -77,6 +83,9 @@ namespace WindowsTestHelpers
             return originalImage.Resize(img1.Width, img1.Height);
         }
 
+        /// <summary>
+        /// Get the location of differences between scaled versions of the provided images.
+        /// </summary>
         public static byte[,] GetDifferences(this Image img1, Image img2, params ExclusionArea[] exclusionAreas)
         {
             int width = img1.Width / DivFactor, height = img1.Height / DivFactor;
@@ -116,6 +125,9 @@ namespace WindowsTestHelpers
             return differences;
         }
 
+        /// <summary>
+        /// Returns a gray-scale version of the provided image.
+        /// </summary>
         public static Image GetGrayScaleVersion(this Image original)
         {
             var newBitmap = new Bitmap(original.Width, original.Height);
@@ -139,6 +151,9 @@ namespace WindowsTestHelpers
             return newBitmap;
         }
 
+        /// <summary>
+        /// Returns a version of hte image with the specified height and width.
+        /// </summary>
         public static Image Resize(this Image originalImage, int newWidth, int newHeight)
         {
             var smallVersion = new Bitmap(newWidth, newHeight);

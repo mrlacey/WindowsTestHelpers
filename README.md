@@ -24,11 +24,11 @@ The following functionality is included
 
 ## ImageComparer
 
-- `PercentageDifferent()`
-- `GetDifferenceImage()`
-- `GetDifferences()`
-- `GetGrayScaleVersion()`
-- `Resize()`
+- `PercentageDifferent()` - Calculates the percentage differrence between the pixels of two images.
+- `GetDifferenceImage()` - Generates a version of the first image highlighting where differences exist between it and the second.
+- `GetDifferences()` - Get the location of differences between scaled versions of the provided images.
+- `GetGrayScaleVersion()` - Returns a gray-scale version of the provided image.
+- `Resize()` - Returns a version of hte image with the specified height and width.
 
 ## ListOfStringAssert
 
