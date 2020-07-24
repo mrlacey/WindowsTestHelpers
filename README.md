@@ -52,10 +52,10 @@ The following functionality is included
 
 ## VirtualKeyboard
 
-- `MinimizeAllWindows()`
-- `RestoreMaximizedWindow()`
-- `KeyDown()`
-- `KeyUp()`
+- `MinimizeAllWindows()` - Minimizes all windows on the desktop.
+- `RestoreMaximizedWindow()` - Restores the current window if maximized.
+- `KeyDown()` - Send the Windows message for a key being pressed down.
+- `KeyUp()` - Send the Windows message for a key being released.
 
 ## WinAppDriverHelper
 
