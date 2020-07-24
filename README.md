@@ -32,7 +32,7 @@ The following functionality is included
 
 ## ListOfStringAssert
 
-- `AssertAreEqualIgnoringOrder()`
+- `AssertAreEqualIgnoringOrder()` - Asserts that the contents of the provided lists are the same if order is ignored.
 
 ## PowerShellHelper
 

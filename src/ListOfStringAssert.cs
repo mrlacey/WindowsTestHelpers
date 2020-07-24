@@ -12,11 +12,17 @@ namespace WindowsTestHelpers
 {
     public static class ListOfStringAssert
     {
+        /// <summary>
+        /// Asserts that the contents of the provided arrays are the same if order is ignored.
+        /// </summary>
         public static void AssertAreEqualIgnoringOrder(string[] expected, string[] actual, bool caseSensitive = true, string message = "")
         {
             AssertAreEqualIgnoringOrder(expected.ToList(), actual.ToList(), caseSensitive, message);
         }
 
+        /// <summary>
+        /// Asserts that the contents of the provided lists are the same if order is ignored.
+        /// </summary>
         public static void AssertAreEqualIgnoringOrder(List<string> expected, List<string> actual, bool caseSensitive = true, string message = "")
         {
             if (actual == null)
