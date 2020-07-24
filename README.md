@@ -74,11 +74,11 @@ The following functionality is included
 
 ## WindowsElementExtensions
 
-- `TryFindElementByName()`
-- `TryFindElementByWindowsUIAutomation()`
-- `FindElementByNameIfExists()`
-- `ClickElement()`
-- `SaveScreenshot()`
+- `TryFindElementByName()` - Tries to get the named element if it exists.
+- `TryFindElementByWindowsUIAutomation()` - Tries to get the specified element if it exists..
+- `FindElementByNameIfExists()` - Gets the named element if it exists.
+- `ClickElement()` - Click on the element with the specified name.
+- `SaveScreenshot()` - Create a screenshot image of the window.
 
 ## WtsBasedApp (Windows Template Studio base UWP app)
 

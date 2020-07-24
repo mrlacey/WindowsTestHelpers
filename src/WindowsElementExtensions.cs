@@ -15,6 +15,9 @@ namespace WindowsTestHelpers
 {
     public static class WindowsElementExtensions
     {
+        /// <summary>
+        /// Tries to get the named element if it exists.
+        /// </summary>
         public static bool TryFindElementByName(this WindowsDriver<WindowsElement> session, string name, out WindowsElement element)
         {
             try
@@ -31,6 +34,9 @@ namespace WindowsTestHelpers
             }
         }
 
+        /// <summary>
+        /// Tries to get the named element if it exists.
+        /// </summary>
         public static bool TryFindElementByName(this WindowsElement source, string name, out WindowsElement element)
         {
             try
@@ -47,6 +53,9 @@ namespace WindowsTestHelpers
             }
         }
 
+        /// <summary>
+        /// Tries to get the specified element if it exists.
+        /// </summary>
         public static bool TryFindElementByWindowsUIAutomation(this WindowsElement session, string selector, out WindowsElement element)
         {
             try
@@ -63,6 +72,9 @@ namespace WindowsTestHelpers
             }
         }
 
+        /// <summary>
+        /// Gets the named element if it exists.
+        /// </summary>
         public static WindowsElement FindElementByNameIfExists(this WindowsDriver<WindowsElement> session, string name)
         {
             WindowsElement element = null;
@@ -79,11 +91,17 @@ namespace WindowsTestHelpers
             return element;
         }
 
+        /// <summary>
+        /// Click on the element with the specified name.
+        /// </summary>
         public static void ClickElement(this WindowsDriver<WindowsElement> session, string name)
         {
             session.FindElementByName(name).Click();
         }
 
+        /// <summary>
+        /// Create a screenshot image of the window.
+        /// </summary>
         public static void SaveScreenshot(this WindowsDriver<WindowsElement> session, string fileName)
         {
             if (string.IsNullOrWhiteSpace(fileName))
