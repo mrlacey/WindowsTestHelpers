@@ -59,11 +59,11 @@ The following functionality is included
 
 ## WinAppDriverHelper
 
-- `CheckIsInstalled()`
-- `StartIfNotRunning()`
-- `StopIfRunning()`
-- `LaunchExe()`
-- `LaunchAppx()`
+- `CheckIsInstalled()` - Asserts that the WinAppDriver executable can be found on disk.
+- `StartIfNotRunning()` - Start WinAppDriver.exe if not already running.
+- `StopIfRunning()` - Stop the WinAppDriver.exe process, if running.
+- `LaunchExe()` - Start the specified executable.
+- `LaunchAppx()` - Start the specified APPX package.
 
 ## WindowHelpers
 

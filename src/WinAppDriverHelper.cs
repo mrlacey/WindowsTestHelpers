@@ -17,6 +17,9 @@ namespace WindowsTestHelpers
 {
     public static class WinAppDriverHelper
     {
+        /// <summary>
+        /// Asserts that the WinAppDriver executable can be found on disk.
+        /// </summary>
         public static void CheckIsInstalled(string pathToExe = @"C:\Program Files (x86)\Windows Application Driver\WinAppDriver.exe")
         {
             Assert.IsTrue(
@@ -24,6 +27,9 @@ namespace WindowsTestHelpers
                 "WinAppDriver is not installed. Download from https://github.com/Microsoft/WinAppDriver/releases");
         }
 
+        /// <summary>
+        /// Start WinAppDriver.exe if not already running.
+        /// </summary>
         public static void StartIfNotRunning(string pathToExe = @"C:\Program Files (x86)\Windows Application Driver\WinAppDriver.exe")
         {
             var script = @"
@@ -37,6 +43,9 @@ if ($wad -eq $Null)
             PowerShellHelper.ExecuteScript(script);
         }
 
+        /// <summary>
+        /// Stop the WinAppDriver.exe process, if running.
+        /// </summary>
         public static void StopIfRunning()
         {
             var script = @"
@@ -50,6 +59,9 @@ if ($wad -ne $null)
             PowerShellHelper.ExecuteScript(script);
         }
 
+        /// <summary>
+        /// Start the specified executable.
+        /// </summary>
         public static WindowsDriver<WindowsElement> LaunchExe(string exeFilePath, string appArguments = "", string appWorkingDir = "", string winAppDriverUrl = "http://127.0.0.1:4723")
         {
             if (string.IsNullOrWhiteSpace(exeFilePath))
@@ -80,6 +92,9 @@ if ($wad -ne $null)
             return new WindowsDriver<WindowsElement>(new Uri(winAppDriverUrl), appCapabilities);
         }
 
+        /// <summary>
+        /// Start the specified APPX package.
+        /// </summary>
         public static WindowsDriver<WindowsElement> LaunchAppx(string installedAppxPackageFamilyName, string winAppDriverUrl = "http://127.0.0.1:4723")
         {
             var app = installedAppxPackageFamilyName;
