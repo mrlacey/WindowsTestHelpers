@@ -4,15 +4,15 @@ The following functionality is included
 
 ## AssertExtensions
 
-* `ComplexStringsAreEqual()`
+* `ComplexStringsAreEqual()` - Compares strings and includes details about the differences if they don't match.
 
 ## CognitiveServicesHelpers
 
-- `GetTextFromImageAsync()`
+- `GetTextFromImageAsync()` - Extract images from the specified image file.
 
 ## CursorHelper
 
-- `MoveToTopLeftOfScreen()`
+- `MoveToTopLeftOfScreen()` - Move the cursor to the top left of the screen so it isn't effecting any content on the UI.
 
 ## ExceptionHelper
 
