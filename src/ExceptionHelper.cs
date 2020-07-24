@@ -13,6 +13,9 @@ namespace WindowsTestHelpers
 {
     public static class ExceptionHelper
     {
+        /// <summary>
+        /// Enables automatic retrying of the action if the specified Exception is thrown.
+        /// </summary>
         public static void RetryOn<TException>(Action whatToRetry, int maxRetryAttempts = 1)
             where TException : Exception
         {

@@ -16,7 +16,7 @@ The following functionality is included
 
 ## ExceptionHelper
 
-- `RetryOn<TException>()`
+- `RetryOn<TException>()` - Enables automatic retrying of the action if the specified Exception is thrown.
 
 ## ExecutionEnvironment
 
