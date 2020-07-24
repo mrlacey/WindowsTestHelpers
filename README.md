@@ -36,11 +36,11 @@ The following functionality is included
 
 ## PowerShellHelper
 
-- `ExecuteScript()`
+- `ExecuteScript()` - Execute a powershell script.
 
 ## StringAssert
 
-- `AreEqual()`
+- `AreEqual()` - Provides more detailed output when compared strings are not equal.
 
 ## SystemSettingsHelper
 
