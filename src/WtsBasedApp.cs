@@ -3,17 +3,15 @@
 // Licensed under the MIT License. See LICENSE in the solution root for license information.
 // </copyright>
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium.Appium.Windows;
 
 namespace WindowsTestHelpers
 {
     public static class WtsBasedApp
     {
+        /// <summary>
+        /// Repeatedly click on the Back button while it is enabled.
+        /// </summary>
         public static void GoAllTheWayBackThroughBackStack(WindowsDriver<WindowsElement> appSession)
         {
             WindowsElement backButton = appSession.FindElementByNameIfExists("Back");
@@ -26,6 +24,9 @@ namespace WindowsTestHelpers
             }
         }
 
+        /// <summary>
+        /// Navigate to the Settings page and select the Light theme.
+        /// </summary>
         public static bool SetAppToLightTheme(WindowsDriver<WindowsElement> appSession)
         {
             appSession.FindElementByName("Settings").Click();
@@ -42,6 +43,9 @@ namespace WindowsTestHelpers
             return false;
         }
 
+        /// <summary>
+        /// Navigate to the Settings page and select the Dark theme.
+        /// </summary>
         public static bool SetAppToDarkTheme(WindowsDriver<WindowsElement> appSession)
         {
             appSession.FindElementByName("Settings").Click();

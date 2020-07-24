@@ -82,6 +82,6 @@ The following functionality is included
 
 ## WtsBasedApp (Windows Template Studio base UWP app)
 
-- `GoAllTheWayBackThroughBackStack()`
-- `SetAppToLightTheme()`
-- `SetAppToDarkTheme()`
+- `GoAllTheWayBackThroughBackStack()` - Repeatedly click on the Back button while it is enabled.
+- `SetAppToLightTheme()` - Navigate to the Settings page and select the Light theme.
+- `SetAppToDarkTheme()` - Navigate to the Settings page and select the Dark theme.
