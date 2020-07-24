@@ -44,11 +44,11 @@ The following functionality is included
 
 ## SystemSettingsHelper
 
-- `TurnOffHighContrastAsync()`
-- `SwitchToHighContrastNumber1Async()`
-- `SwitchToHighContrastNumber2Async()`
-- `SwitchToHighContrastBlackAsync()`
-- `SwitchToHighContrastWhiteAsync()`
+- `TurnOffHighContrastAsync()` - Uses WinApDriver to automate turning high contrast mode off on the machine.
+- `SwitchToHighContrastNumber1Async()` - Uses WinApDriver to automate enabling high contrast mode #1 on the machine.
+- `SwitchToHighContrastNumber2Async()` - Uses WinApDriver to automate enabling high contrast mode #2 on the machine.
+- `SwitchToHighContrastBlackAsync()` - Uses WinApDriver to automate enabling high contrast black mode on the machine.
+- `SwitchToHighContrastWhiteAsync()` - Uses WinApDriver to automate enabling high contrast white mode on the machine.
 
 ## VirtualKeyboard
 
