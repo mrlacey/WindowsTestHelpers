@@ -67,10 +67,10 @@ The following functionality is included
 
 ## WindowHelpers
 
-- `BringVisualStudioToFront()`
-- `BringWindowToFront()`
-- `TryFlashVisualStudio()`
-- `TryFlashWindow()`
+- `BringVisualStudioToFront()` - Makes Visual Studio the active foreground window on the desktop.
+- `BringWindowToFront()` -  Makes the specified app the active foreground window on the desktop.
+- `TryFlashVisualStudio()` - Flashes Visual Studio's task bar icon.
+- `TryFlashWindow()` - Flashes the specified window's task bar icon.
 
 ## WindowsElementExtensions
 
@@ -80,7 +80,7 @@ The following functionality is included
 - `ClickElement()`
 - `SaveScreenshot()`
 
-## WtsBasedApp
+## WtsBasedApp (Windows Template Studio base UWP app)
 
 - `GoAllTheWayBackThroughBackStack()`
 - `SetAppToLightTheme()`
