@@ -20,7 +20,7 @@ The following functionality is included
 
 ## ExecutionEnvironment
 
-- `CheckRunningAsAdmin()`
+- `CheckRunningAsAdmin()` - Asserts that the test is running with Administrator privileges.
 
 ## ImageComparer
 
