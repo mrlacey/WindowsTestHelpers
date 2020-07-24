@@ -10,6 +10,9 @@ namespace WindowsTestHelpers
 {
     public static class AssertExtensions
     {
+        /// <summary>
+        /// Compares strings and includes details about the differences if they don't match.
+        /// </summary>
         public static void ComplexStringsAreEqual(this Assert source, string expected, string actual, string message = "")
         {
             if (expected == actual)
