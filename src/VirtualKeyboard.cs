@@ -21,6 +21,9 @@ namespace WindowsTestHelpers
         private const byte LetterM = 77;
         private const byte Down = 40;
 
+        /// <summary>
+        /// Minimizes all windows on the desktop.
+        /// </summary>
         public static void MinimizeAllWindows()
         {
             KeyDown(WindowsKey);
@@ -29,6 +32,9 @@ namespace WindowsTestHelpers
             KeyUp(WindowsKey);
         }
 
+        /// <summary>
+        /// Restores the current window if maximized.
+        /// </summary>
         public static void RestoreMaximizedWindow()
         {
             KeyDown(WindowsKey);
@@ -37,11 +43,17 @@ namespace WindowsTestHelpers
             KeyUp(WindowsKey);
         }
 
+        /// <summary>
+        /// Send the Windows message for a key being pressed down.
+        /// </summary>
         public static void KeyDown(byte vKey)
         {
             keybd_event(vKey, 0, KeyeventfExtendedkey, 0);
         }
 
+        /// <summary>
+        /// Send the Windows message for a key being released.
+        /// </summary>
         public static void KeyUp(byte vKey)
         {
             keybd_event(vKey, 0, KeyeventfExtendedkey | KeyeventfKeyup, 0);

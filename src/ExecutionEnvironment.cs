@@ -10,6 +10,9 @@ namespace WindowsTestHelpers
 {
     public static class ExecutionEnvironment
     {
+        /// <summary>
+        /// Asserts that the test is running with Administrator privileges.
+        /// </summary>
         public static void CheckRunningAsAdmin()
         {
             Assert.IsTrue(

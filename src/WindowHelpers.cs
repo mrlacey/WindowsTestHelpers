@@ -29,16 +29,25 @@ namespace WindowsTestHelpers
             ForceMinimized = 11,
         }
 
+        /// <summary>
+        /// Makes Visual Studio the active foreground window on the desktop.
+        /// </summary>
         public static void BringVisualStudioToFront(string projectName)
         {
             BringVisualStudioToFrontInternal(projectName);
         }
 
+        /// <summary>
+        /// Makes the specified app the active foreground window on the desktop.
+        /// </summary>
         public static void BringWindowToFront(string windowName)
         {
             BringWindowToFrontInternal(windowName);
         }
 
+        /// <summary>
+        /// Flashes Visual Studio's task bar icon.
+        /// </summary>
         public static void TryFlashVisualStudio(string projectName)
         {
             var hndl = BringVisualStudioToFrontInternal(projectName);
@@ -46,6 +55,9 @@ namespace WindowsTestHelpers
             FlashWindow(hndl, true);
         }
 
+        /// <summary>
+        /// Flashes the specified window's task bar icon.
+        /// </summary>
         public static void TryFlashWindow(string windowName)
         {
             var hndl = BringWindowToFrontInternal(windowName);

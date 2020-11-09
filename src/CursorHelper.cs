@@ -9,6 +9,9 @@ namespace WindowsTestHelpers
 {
     public static class CursorHelper
     {
+        /// <summary>
+        /// Move the cursor to the top left of the screen so it isn't effecting any content on the UI.
+        /// </summary>
         public static void MoveToTopLeftOfScreen()
         {
             SetCursorPos(0, 0);

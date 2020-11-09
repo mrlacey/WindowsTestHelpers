@@ -24,26 +24,41 @@ namespace WindowsTestHelpers
 
         public string WindowsApplicationDriverUrl { get; private set; }
 
+        /// <summary>
+        /// Uses WinApDriver to automate turning high contrast mode off on the machine.
+        /// </summary>
         public async Task TurnOffHighContrastAsync()
         {
             await this.SetHighContrastAsync("None");
         }
 
+        /// <summary>
+        /// Uses WinApDriver to automate enabling high contrast mode #1 on the machine.
+        /// </summary>
         public async Task SwitchToHighContrastNumber1Async()
         {
             await this.SetHighContrastAsync("High Contrast #1");
         }
 
+        /// <summary>
+        /// Uses WinApDriver to automate enabling high contrast mode #2 on the machine.
+        /// </summary>
         public async Task SwitchToHighContrastNumber2Async()
         {
             await this.SetHighContrastAsync("High Contrast #2");
         }
 
+        /// <summary>
+        /// Uses WinApDriver to automate enabling high contrast black mode on the machine.
+        /// </summary>
         public async Task SwitchToHighContrastBlackAsync()
         {
             await this.SetHighContrastAsync("High Contrast Black");
         }
 
+        /// <summary>
+        /// Uses WinApDriver to automate enabling high contrast white mode on the machine.
+        /// </summary>
         public async Task SwitchToHighContrastWhiteAsync()
         {
             await this.SetHighContrastAsync("High Contrast White");

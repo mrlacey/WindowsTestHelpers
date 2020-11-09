@@ -9,8 +9,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace WindowsTestHelpers
 {
-    // Provides more detailed output when compared strings are not equal.
-    // Intended to make spotting differences easier.
+    /// <summary>
+    /// Provides more detailed output when compared strings are not equal.
+    /// Intended to make spotting differences easier.
+    /// </summary>
     public static class StringAssert
     {
         public static void AreEqual(string expected, string actual, string message = "")
