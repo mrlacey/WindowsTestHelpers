@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace WindowsTestHelpers.Tests
@@ -156,7 +157,7 @@ namespace WindowsTestHelpers.Tests
             }
             catch
             {
-                // Do nothing. Want exceptions to nt end the test
+                // Do nothing. Want exceptions to not end the test
             }
 
             Assert.AreEqual(1, callCount);
@@ -183,7 +184,33 @@ namespace WindowsTestHelpers.Tests
             }
             catch
             {
-                // Do nothing. Want exceptions to nt end the test
+                // Do nothing. Want exceptions to not end the test
+            }
+
+            Assert.AreEqual(3, callCount);
+        }
+
+        [TestMethod]
+        public async Task CanAwaitInAction()
+        {
+            var callCount = 0;
+
+            try
+            {
+                await ExceptionHelper.RetryOnAsync<Exception>(
+                    async () =>
+                    {
+                        callCount++;
+                        await Task.Delay(100);
+                        callCount++;
+                        await Task.Delay(100);
+                        callCount++;
+                    },
+                    maxRetryAttempts: 5);
+            }
+            catch
+            {
+                // Do nothing. Want exceptions to not end the test
             }
 
             Assert.AreEqual(3, callCount);

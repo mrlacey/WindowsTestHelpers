@@ -47,5 +47,37 @@ namespace WindowsTestHelpers
                 }
             }
         }
+
+        public static async Task RetryOnAsync<TException>(Func<Task> whatToRetry, int maxRetryAttempts = 1)
+            where TException : Exception
+        {
+            var attemptsMade = 0;
+
+            var keepRetrying = true;
+
+            while (keepRetrying)
+            {
+                try
+                {
+                    await whatToRetry();
+
+                    keepRetrying = false;
+                }
+                catch (Exception exc)
+                {
+                    if (exc is TException)
+                    {
+                        if (++attemptsMade > maxRetryAttempts)
+                        {
+                            throw;
+                        }
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+            }
+        }
     }
 }
