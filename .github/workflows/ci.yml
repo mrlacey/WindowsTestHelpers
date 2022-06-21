@@ -11,11 +11,11 @@ jobs:
         uses: microsoft/setup-msbuild@v1.0.3
         
       - name: build code
-        run: msbuild.exe ./src/WindowsTestHelpers.sln /restore -p:Configuration=Release
+        run: msbuild.exe .\src\WindowsTestHelpers.sln /restore -p:Configuration=Release
         
       - name: setup tests
         uses: darenm/Setup-VSTest@v1
         
       - name: run tests
-        run: vstest.console.exe ../WindowsTestHelpers.dll
+        run: vstest.console.exe **\WindowsTestHelpers.dll
    
