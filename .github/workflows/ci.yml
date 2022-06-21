@@ -1,5 +1,5 @@
 name: CI Build
-on: [ push, pull_request ]
+on: [ pull_request ]
 jobs:
   Build_and_test:
     runs-on: windows-latest
