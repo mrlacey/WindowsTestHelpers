@@ -28,7 +28,7 @@
     <PackageReference Include="Microsoft.Azure.CognitiveServices.Vision.ComputerVision" Version="3.2.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
       <PackageReference Include="NuGet.CommandLine" Version="5.7.2" GeneratePackagePath="true" >
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
