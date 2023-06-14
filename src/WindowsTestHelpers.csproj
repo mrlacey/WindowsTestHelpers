@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net47</TargetFramework>
@@ -29,7 +29,7 @@
     <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-      <PackageReference Include="NuGet.CommandLine" Version="5.9.3" GeneratePackagePath="true" >
+      <PackageReference Include="NuGet.CommandLine" Version="6.0.5" GeneratePackagePath="true" >
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
