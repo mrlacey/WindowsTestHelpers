@@ -1,4 +1,4 @@
-# WindowsTestHelpers
+﻿# WindowsTestHelpers
 
 The following functionality is included 
 
@@ -24,7 +24,7 @@ The following functionality is included
 
 ## ImageComparer
 
-- `PercentageDifferent()` - Calculates the percentage differrence between the pixels of two images.
+- `PercentageDifferent()` - Calculates the percentage difference between the pixels of two images.
 - `GetDifferenceImage()` - Generates a version of the first image highlighting where differences exist between it and the second.
 - `GetDifferences()` - Get the location of differences between scaled versions of the provided images.
 - `GetGrayScaleVersion()` - Returns a gray-scale version of the provided image.
@@ -36,7 +36,7 @@ The following functionality is included
 
 ## PowerShellHelper
 
-- `ExecuteScript()` - Execute a powershell script.
+- `ExecuteScript()` - Execute a PowerShell script.
 
 ## StringAssert
 
