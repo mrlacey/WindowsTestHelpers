@@ -19,14 +19,14 @@
   </PropertyGroup>
 
     <!-- IMPORTANT - Update WindowsTestHelpers.nuspec when update dependency versions -->
-    
+
   <ItemGroup>
     <PackageReference Include="Appium.WebDriver" Version="3.0.0.2" />
-    <PackageReference Include="Microsoft.Azure.CognitiveServices.Vision.ComputerVision" Version="3.2.0" />
+    <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.24" />
     <PackageReference Include="MSTest.TestAdapter" Version="3.7.3" />
     <PackageReference Include="MSTest.TestFramework" Version="3.7.3" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-      <PackageReference Include="NuGet.CommandLine" Version="6.0.6" GeneratePackagePath="true">
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="NuGet.CommandLine" Version="6.12.2" GeneratePackagePath="true">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>

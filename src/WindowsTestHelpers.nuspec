@@ -17,10 +17,9 @@
     <dependencies>
       <group targetFramework="net47">
         <dependency id="Appium.WebDriver" version="3.0.0.2" />
-        <dependency id="Microsoft.Azure.CognitiveServices.Vision.ComputerVision" version="3.2.0" />
         <dependency id="MSTest.TestAdapter" version="3.7.3"/>
         <dependency id="MSTest.TestFramework" version="3.7.3" />
-        <dependency id="Newtonsoft.Json" version="9.0.1" />
+        <dependency id="Newtonsoft.Json" version="13.0.3" />
         <dependency id="System.Management.Automation.dll" version="10.0.10586" />
       </group>
     </dependencies>

@@ -6,10 +6,6 @@ The following functionality is included
 
 * `ComplexStringsAreEqual()` - Compares strings and includes details about the differences if they don't match.
 
-## CognitiveServicesHelpers
-
-- `GetTextFromImageAsync()` - Extract images from the specified image file.
-
 ## CursorHelper
 
 - `MoveToTopLeftOfScreen()` - Move the cursor to the top left of the screen so it isn't effecting any content on the UI.
