@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net47</TargetFramework>
@@ -18,10 +18,10 @@
   <ItemGroup>
     <PackageReference Include="Appium.WebDriver" Version="3.0.0.2" />
     <PackageReference Include="Microsoft.Azure.CognitiveServices.Vision.ComputerVision" Version="3.2.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
-    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.7.3" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.7.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-      <PackageReference Include="NuGet.CommandLine" Version="6.0.6" GeneratePackagePath="true" >
+      <PackageReference Include="NuGet.CommandLine" Version="6.0.6" GeneratePackagePath="true">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
