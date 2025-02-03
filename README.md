@@ -1,6 +1,6 @@
 ﻿# WindowsTestHelpers
 
-The following functionality is included 
+The following functionality is included:
 
 ## AssertExtensions
 

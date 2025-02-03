@@ -13,6 +13,7 @@
     <description>A collection of utility classes to help with testing Windows Apps.</description>
     <license type="expression">MIT</license>
     <tags>Windows test testing UWP WinAppDriver</tags>
+      <readme>docs\readme.md</readme>
 
     <dependencies>
       <group targetFramework="net47">
@@ -25,6 +26,7 @@
     </dependencies>
   </metadata>
   <files>
+      <file src="readme.md" target="docs\" />
     <file src="bin\Release\net47\WindowsTestHelpers.dll" target="lib\net47\"/>
   </files>
 </package>
