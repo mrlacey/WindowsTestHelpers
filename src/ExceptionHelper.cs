@@ -16,7 +16,11 @@ namespace WindowsTestHelpers
         /// <summary>
         /// Enables automatic retrying of the action if the specified Exception is thrown.
         /// </summary>
-        public static void RetryOn<TException>(Action whatToRetry, int maxRetryAttempts = 1)
+        /// <typeparam name="TException">The exception which if thrown will prompt a reattempt.</typeparam>
+        /// <param name="whatToRetry">The action that may be retried.</param>
+        /// <param name="maxRetryAttempts">How many times to retry the action if an exception is thrown.</param>
+        /// <param name="beforeRetrying">A separate action to perform before retrying.</param>
+        public static void RetryOn<TException>(Action whatToRetry, int maxRetryAttempts = 1, Action beforeRetrying = null)
             where TException : Exception
         {
             var attemptsMade = 0;
@@ -39,6 +43,8 @@ namespace WindowsTestHelpers
                         {
                             throw;
                         }
+
+                        beforeRetrying?.Invoke();
                     }
                     else
                     {
