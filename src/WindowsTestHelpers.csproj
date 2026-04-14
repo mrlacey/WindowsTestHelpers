@@ -26,7 +26,7 @@
     <PackageReference Include="MSTest.TestAdapter" Version="3.7.3" />
     <PackageReference Include="MSTest.TestFramework" Version="3.7.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-      <PackageReference Include="NuGet.CommandLine" Version="6.12.2" GeneratePackagePath="true">
+      <PackageReference Include="NuGet.CommandLine" Version="6.12.5" GeneratePackagePath="true">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
